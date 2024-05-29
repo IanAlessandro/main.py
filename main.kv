@@ -1,0 +1,284 @@
+<FirstScreen>:
+    name: 'primeira tela'
+    MDFloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'alphababerprimeiratela.jpg'
+                allow_stretch: True
+                keep_ratio: False
+    MDFillRoundFlatButton:
+        text: 'Entrar'
+        md_bg_color: '#A97D56'
+        text_color: '#403B38'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+        size_hint_x: .6
+        elevation:0
+        on_release: 
+            root.manager.current = 'tela de login'
+            root.manager.transition.direction = 'left'
+
+<LoginScreen>:
+    name: 'tela de login'
+    MDFloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'teladelogin.jpg'
+                allow_stretch: True
+                keep_ratio: False
+    MDTextField:
+        hint_text: 'Email'
+        mode: 'round'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.54}
+        icon_right: 'mail'
+        size_hint_x: .8
+    MDTextField:
+        hint_text: 'Senha'
+        mode: 'round'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
+        size_hint_x: .8
+        icon_right: 'lock'
+        password: True
+    MDFillRoundFlatButton:
+        text: 'Acessar'
+        md_bg_color: '#403B38'
+        text_color: '#A97D56'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        size_hint_x: .6
+        elevation:0
+        on_release: 
+            root.manager.current = 'tela principal'
+            root.manager.transition.direction = 'left'
+    MDTextButton:
+        text: 'Não tem uma conta? [u]Cadastre-se.[/u]'
+        theme_text_color: 'Custom'
+        text_color: 1, 1, 1, 1
+        bold: True
+        markup: True
+        halign: 'center'
+        pos_hint: {'center_x': 0.5, 'center_y': 0.07}
+        font_size: dp(13)
+        size_hint_x: .8
+        on_release: 
+            root.manager.current  = 'tela de cadastro'
+            root.manager.transition.direction = 'left'
+    MDIconButton:
+        icon: 'arrow-left'
+        theme_text_color: 'Custom'
+        text_color: 1, 1, 1, 1
+        pos_hint: {'center_x': 0.05, 'center_y': 0.97}
+        on_release: 
+            root.manager.current = 'primeira tela'
+            root.manager.transition.direction = 'right'
+
+<RegisterScreen>:
+    name: 'tela de cadastro'
+    MDFloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'teladecadastro.jpg'
+                allow_stretch: True
+                keep_ratio: False
+        MDTextField:
+            hint_text: 'Nome'
+            mode: 'round'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            icon_right: 'account'
+            size_hint_x: .8
+        MDTextField:
+            hint_text: 'Telefone'
+            mode: 'round'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.52}
+            size_hint_x: .8
+            icon_right: 'phone'
+        MDTextField:
+            hint_text: 'Email'
+            mode: 'round'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.44}
+            size_hint_x: .8
+            icon_right: 'mail'
+        MDTextField:
+            hint_text: 'Senha'
+            mode: 'round'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.36}
+            size_hint_x: .8
+            icon_right: 'lock'
+            password: True
+        MDFillRoundFlatButton:
+            text: 'Cadastrar'
+            md_bg_color: '#403B38'
+            text_color: '#A97D56'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.25}
+            size_hint_x: .6
+            elevation:0
+            on_release: 
+                root.manager.current = 'tela de login'
+                root.manager.transition.direction = 'right'
+        MDTextButton:
+            text: 'Já tem uma conta? [u]Faça login.[/u]'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            bold: True
+            markup: True
+            halign: 'center'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.07}
+            font_size: dp(13)
+            size_hint_x: .8
+            on_release: 
+                root.manager.current  = 'tela de login'
+                root.manager.transition.direction = 'right'
+
+<MainScreen>:
+    name: 'tela principal'
+    MDFloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'telaprincipal.jpg'
+                allow_stretch: True
+                keep_ratio: False
+        MDFillRoundFlatButton:
+            text: 'Serviços'
+            md_bg_color: '#403B38'
+            text_color: '#A97D56'
+            pos_hint: {'center_x': 0.25, 'center_y': 0.41}
+            size_hint_x: .2
+            elevation:0.5
+            on_release: 
+                root.manager.current = 'serviços'
+                root.manager.transition.direction = 'left'
+        MDFillRoundFlatButton:
+            text: 'Barbeiros'
+            md_bg_color: '#403B38'
+            text_color: '#A97D56'
+            pos_hint: {'center_x': 0.7, 'center_y': 0.4}
+            size_hint_x: .2
+            elevation:0.5
+            on_release: 
+                root.manager.current = 'barbeiros'
+                root.manager.transition.direction = 'left'
+        MDFillRoundFlatButton:
+            text: 'Agendar'
+            md_bg_color: '#403B38'
+            text_color: '#A97D56'
+            pos_hint: {'center_x': 0.25, 'center_y': 0.09}
+            size_hint_x: .2
+            elevation:0.5
+            on_release: 
+                root.manager.current = 'agendamento'
+                root.manager.transition.direction = 'left'
+        MDFillRoundFlatButton:
+            text: 'Localização'
+            md_bg_color: '#403B38'
+            text_color: '#A97D56'
+            pos_hint: {'center_x': 0.7, 'center_y': 0.08}
+            size_hint_x: .2
+            elevation:0.5
+            on_release: 
+                root.manager.current = 'localização'
+                root.manager.transition.direction = 'left'
+        MDIconButton:
+            icon: 'arrow-left'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.05, 'center_y': 0.97}
+            on_release: 
+                root.manager.current = 'tela de login'
+                root.manager.transition.direction = 'right'
+
+<Servicos>:
+    name: 'serviços'
+    MDFloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'servicos.jpg'
+                allow_stretch: True
+                keep_ratio: False
+        MDIconButton:
+            icon: 'arrow-left'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.05, 'center_y': 0.97}
+            on_release: 
+                root.manager.current = 'tela principal'
+                root.manager.transition.direction = 'right'
+
+<Localizacao>:
+    name: 'localização'
+    FloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'localizacao.jpg'
+                allow_stretch: True
+                keep_ratio: False
+        MDIconButton:
+            icon: 'arrow-left'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.05, 'center_y': 0.97}
+            on_release: 
+                root.manager.current = 'tela principal'
+                root.manager.transition.direction = 'right'
+
+
+<Barbeiros>:
+    name: 'barbeiros'
+    FloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'barbeiros.jpg'
+                allow_stretch: True
+                keep_ratio: False
+        MDIconButton:
+            icon: 'arrow-left'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.05, 'center_y': 0.97}
+            on_release: 
+                root.manager.current = 'tela principal'
+                root.manager.transition.direction = 'right'
+
+<Agendamento>:
+    name: 'agendamento'
+    FloatLayout:
+        MDCard:
+            style: 'filled'
+            size_hint: (1, 1)    
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            FitImage:
+                source: 'agendamento.jpg'
+                allow_stretch: True
+                keep_ratio: False
+        MDIconButton:
+            icon: 'arrow-left'
+            theme_text_color: 'Custom'
+            text_color: 1, 1, 1, 1
+            pos_hint: {'center_x': 0.05, 'center_y': 0.97}
+            on_release: 
+                root.manager.current = 'tela principal'
+                root.manager.transition.direction = 'right'
+        MDRaisedButton:
+            text: 'Selecione'
+            md_bg_color: '#403B38'
+            text_color: '#A97D56'
+            pos_hint: {'center_x': 0.32, 'center_y': 0.58}
+            size_hint_x: .6
